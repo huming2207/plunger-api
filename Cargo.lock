@@ -274,6 +274,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "212d0f5754cb6769937f4501cc0e67f4f4483c8d2c3e1e922ee9edbe4ab4c7c0"
 
 [[package]]
+name = "dotenv"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "77c90badedccf4105eca100756a0b1289e191f6fcbdadd3cee1d2f614f97da8f"
+
+[[package]]
 name = "dtoa"
 version = "0.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -905,9 +911,11 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "clap",
+ "dotenv",
  "probe-rs",
  "radix_fmt",
- "rocket",
+ "rocket 0.5.0-rc.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket-multipart-form-data",
  "rusb",
  "serde",
  "serde_json",
@@ -1144,8 +1152,46 @@ dependencies = [
  "pin-project-lite",
  "rand",
  "ref-cast",
- "rocket_codegen",
- "rocket_http",
+ "rocket_codegen 0.5.0-rc.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket_http 0.5.0-rc.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde",
+ "serde_json",
+ "state",
+ "tempfile",
+ "time",
+ "tokio",
+ "tokio-stream",
+ "tokio-util",
+ "ubyte",
+ "version_check",
+ "yansi",
+]
+
+[[package]]
+name = "rocket"
+version = "0.5.0-rc.1"
+source = "git+https://github.com/SergioBenitez/Rocket#e45e16456160b31c6506e5c13bc6b2f1dfa795a6"
+dependencies = [
+ "async-stream",
+ "async-trait",
+ "atomic",
+ "atty",
+ "binascii",
+ "bytes",
+ "either",
+ "figment",
+ "futures",
+ "indexmap",
+ "log",
+ "memchr",
+ "multer",
+ "num_cpus",
+ "parking_lot",
+ "pin-project-lite",
+ "rand",
+ "ref-cast",
+ "rocket_codegen 0.5.0-rc.1 (git+https://github.com/SergioBenitez/Rocket)",
+ "rocket_http 0.5.0-rc.1 (git+https://github.com/SergioBenitez/Rocket)",
  "serde",
  "state",
  "tempfile",
@@ -1159,6 +1205,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "rocket-multipart-form-data"
+version = "0.10.0"
+source = "git+https://github.com/magiclen/rocket-multipart-form-data#899ac578f82f3d19fd51430670c6be1eb13d1743"
+dependencies = [
+ "mime",
+ "multer",
+ "rocket 0.5.0-rc.1 (git+https://github.com/SergioBenitez/Rocket)",
+ "tokio-util",
+]
+
+[[package]]
 name = "rocket_codegen"
 version = "0.5.0-rc.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1169,7 +1226,22 @@ dependencies = [
  "indexmap",
  "proc-macro2",
  "quote",
- "rocket_http",
+ "rocket_http 0.5.0-rc.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "syn",
+ "unicode-xid",
+]
+
+[[package]]
+name = "rocket_codegen"
+version = "0.5.0-rc.1"
+source = "git+https://github.com/SergioBenitez/Rocket#e45e16456160b31c6506e5c13bc6b2f1dfa795a6"
+dependencies = [
+ "devise",
+ "glob",
+ "indexmap",
+ "proc-macro2",
+ "quote",
+ "rocket_http 0.5.0-rc.1 (git+https://github.com/SergioBenitez/Rocket)",
  "syn",
  "unicode-xid",
 ]
@@ -1179,6 +1251,33 @@ name = "rocket_http"
 version = "0.5.0-rc.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "23c8b7d512d2fcac2316ebe590cde67573844b99e6cc9ee0f53375fa16e25ebd"
+dependencies = [
+ "cookie",
+ "either",
+ "http",
+ "hyper",
+ "indexmap",
+ "log",
+ "memchr",
+ "mime",
+ "parking_lot",
+ "pear",
+ "percent-encoding",
+ "pin-project-lite",
+ "ref-cast",
+ "serde",
+ "smallvec",
+ "stable-pattern",
+ "state",
+ "time",
+ "tokio",
+ "uncased",
+]
+
+[[package]]
+name = "rocket_http"
+version = "0.5.0-rc.1"
+source = "git+https://github.com/SergioBenitez/Rocket#e45e16456160b31c6506e5c13bc6b2f1dfa795a6"
 dependencies = [
  "cookie",
  "either",
