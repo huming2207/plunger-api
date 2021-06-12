@@ -1,5 +1,5 @@
 [package]
-name = "plunger-binding"
+name = "plunger-api"
 version = "0.1.0"
 authors = ["Jackson Ming Hu <huming2207@gmail.com>"]
 edition = "2018"
